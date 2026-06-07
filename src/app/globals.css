@@ -2,26 +2,330 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* =========================================================================
+   OpenBook — design system foundation (BUILD_SPEC §2)
+   Colors are stored as space-separated RGB channels so Tailwind alpha
+   modifiers work: rgb(var(--ob-x) / <alpha-value>)  ->  bg-surface/70.
+   ========================================================================= */
+
+/* ---------- SF Pro bridge (Apple-licensed: we ship NO woff, OS provides it) ---------- */
+@font-face {
+  font-family: "OB Display";
+  src: local("SF Pro Display"), local("SFProDisplay-Regular"), local("-apple-system");
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OB Text";
+  src: local("SF Pro Text"), local("SFProText-Regular"), local("-apple-system");
+  font-weight: 400 600;
+  font-display: swap;
+}
+/* Dyslexia toggle font — SIL-licensed, shippable. Place woff2 in /public/fonts.
+   Falls back gracefully to Comic Sans MS if not yet self-hosted. */
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("/fonts/OpenDyslexic-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "OpenDyslexic";
+  src: url("/fonts/OpenDyslexic-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* ---- color tokens (light) ---- */
+  --ob-background: 247 246 243; /* #F7F6F3 — warm off-white canvas */
+  --ob-surface: 255 255 255; /* #FFFFFF */
+  --ob-surface-elevated: 255 255 255; /* #FFFFFF */
+  --ob-surface-sunken: 238 237 232; /* #EEEDE8 */
+  --ob-surface-inverse: 28 28 28; /* #1C1C1C — near-black panel */
+  --ob-border: 227 225 218; /* #E3E1DA */
+  --ob-border-strong: 201 198 189; /* #C9C6BD */
+  --ob-text-primary: 26 26 26; /* #1A1A1A — 15.8:1 AAA */
+  --ob-text-secondary: 85 82 75; /* #55524B — 8.0:1 AAA */
+  --ob-text-tertiary: 134 131 123; /* #86837B — 4.6:1 AA */
+  --ob-text-on-inverse: 243 242 238; /* #F3F2EE */
+  --ob-text-asleep: 184 182 174; /* #B8B6AE — landing "asleep" text */
+  --ob-accent: 192 254 111; /* #C0FE6F — THE lime */
+  --ob-accent-hover: 178 245 89; /* #B2F559 */
+  --ob-accent-foreground: 21 36 10; /* #15240A — 11.6:1 on lime */
+  --ob-accent-subtle: 234 249 212; /* #EAF9D4 */
+  --ob-accent-ring: 159 227 74; /* #9FE34A */
+  --ob-cta: 26 26 26; /* #1A1A1A — black pill */
+  --ob-cta-foreground: 255 255 255; /* #FFFFFF */
+  --ob-success: 46 139 87; /* #2E8B57 */
+  --ob-success-subtle: 219 240 228; /* #DBF0E4 */
+  --ob-warning: 183 121 31; /* #B7791F */
+  --ob-warning-subtle: 251 239 211; /* #FBEFD3 */
+  --ob-danger: 209 67 67; /* #D14343 */
+  --ob-danger-subtle: 251 227 225; /* #FBE3E1 */
+  --ob-info: 63 111 224; /* #3F6FE0 */
+  --ob-info-subtle: 226 234 251; /* #E2EAFB */
+  --ob-focus-ring: 26 111 224; /* #1A6FE0 — blue, never lime */
+
+  /* ---- translucent / glass (kept as rgba; not channel triples) ---- */
+  --ob-overlay: rgba(26, 24, 20, 0.42);
+  --ob-glass-fill: rgba(255, 255, 255, 0.62);
+  --ob-glass-border: rgba(255, 255, 255, 0.55);
+  --ob-glass-blur: 28px;
+  --ob-glass-saturate: 160%;
+
+  /* ---- typography ---- */
+  --font-display: "OB Display", "SF Pro Display", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", system-ui, sans-serif;
+  --font-text: "OB Text", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    system-ui, sans-serif;
+  --font-mono: "SF Mono", "SFMono-Regular", ui-monospace, "Menlo", "Cascadia Code",
+    "Roboto Mono", monospace;
+  --font-dyslexic: "OpenDyslexic", "Comic Sans MS", var(--font-text);
+
+  /* ---- motion ---- */
+  --ob-dur-instant: 80ms;
+  --ob-dur-fast: 140ms;
+  --ob-dur-base: 220ms;
+  --ob-dur-slow: 320ms;
+  --ob-dur-slowest: 480ms;
+  --ob-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ob-ease-entrance: cubic-bezier(0.16, 1, 0.3, 1);
+  --ob-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ob-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-ob: cubic-bezier(0.22, 0.61, 0.36, 1); /* landing scroll easing */
+
+  /* ---- elevation (six soft tiers; light) ---- */
+  --ob-e1: 0 1px 2px -1px rgba(26, 26, 24, 0.08);
+  --ob-e2: 0 2px 6px -2px rgba(26, 26, 24, 0.1), 0 1px 2px -1px rgba(26, 26, 24, 0.06);
+  --ob-e3: 0 6px 16px -6px rgba(26, 26, 24, 0.12), 0 2px 6px -2px rgba(26, 26, 24, 0.07);
+  --ob-e4: 0 12px 28px -10px rgba(26, 26, 24, 0.14), 0 4px 10px -4px rgba(26, 26, 24, 0.08);
+  --ob-e5: 0 20px 44px -16px rgba(26, 26, 24, 0.16), 0 6px 14px -6px rgba(26, 26, 24, 0.08);
+  --ob-e6: 0 28px 70px -28px rgba(26, 26, 24, 0.2), 0 8px 18px -8px rgba(26, 26, 24, 0.1);
+  --ob-float: 0 24px 60px -24px rgba(26, 26, 24, 0.18), 0 2px 8px -2px rgba(26, 26, 24, 0.08);
+  --ob-e-accent: 0 0 0 1px rgb(var(--ob-accent-ring)), 0 8px 28px -8px rgba(192, 254, 111, 0.5);
+}
+
+[data-theme="dark"] {
+  --ob-background: 30 30 30; /* #1E1E1E */
+  --ob-surface: 36 36 36; /* #242424 — official dark base */
+  --ob-surface-elevated: 44 44 44; /* #2C2C2C */
+  --ob-surface-sunken: 23 23 23; /* #171717 */
+  --ob-surface-inverse: 243 242 238; /* #F3F2EE */
+  --ob-border: 54 54 54; /* #363636 */
+  --ob-border-strong: 74 74 74; /* #4A4A4A */
+  --ob-text-primary: 244 243 239; /* #F4F3EF — 14.9:1 AAA */
+  --ob-text-secondary: 180 178 171; /* #B4B2AB — 7.4:1 AAA */
+  --ob-text-tertiary: 138 136 127; /* #8A887F — 4.6:1 AA */
+  --ob-text-on-inverse: 26 26 26; /* #1A1A1A */
+  --ob-text-asleep: 90 88 82; /* #5A5852 */
+  --ob-accent: 192 254 111; /* #C0FE6F */
+  --ob-accent-hover: 205 255 133; /* #CDFF85 */
+  --ob-accent-foreground: 21 36 10; /* #15240A */
+  --ob-accent-subtle: 42 54 26; /* #2A361A */
+  --ob-accent-ring: 92 122 51; /* #5C7A33 */
+  --ob-cta: 244 243 239; /* #F4F3EF — white pill */
+  --ob-cta-foreground: 26 26 26; /* #1A1A1A */
+  --ob-success: 91 196 137; /* #5BC489 */
+  --ob-success-subtle: 28 51 39; /* #1C3327 */
+  --ob-warning: 224 165 61; /* #E0A53D */
+  --ob-warning-subtle: 53 42 20; /* #352A14 */
+  --ob-danger: 240 113 107; /* #F0716B */
+  --ob-danger-subtle: 58 32 31; /* #3A201F */
+  --ob-info: 110 155 255; /* #6E9BFF */
+  --ob-info-subtle: 30 42 66; /* #1E2A42 */
+  --ob-focus-ring: 110 155 255; /* #6E9BFF */
+
+  --ob-overlay: rgba(0, 0, 0, 0.58);
+  --ob-glass-fill: rgba(38, 38, 38, 0.55);
+  --ob-glass-border: rgba(255, 255, 255, 0.1);
+  --ob-glass-saturate: 140%;
+
+  /* dark relies on borders + inner highlight; shadows barely read on near-black */
+  --ob-e1: 0 1px 2px -1px rgba(0, 0, 0, 0.5);
+  --ob-e2: 0 2px 6px -2px rgba(0, 0, 0, 0.55);
+  --ob-e3: 0 6px 16px -6px rgba(0, 0, 0, 0.6);
+  --ob-e4: 0 12px 28px -10px rgba(0, 0, 0, 0.62);
+  --ob-e5: 0 20px 44px -16px rgba(0, 0, 0, 0.66);
+  --ob-e6: 0 28px 70px -28px rgba(0, 0, 0, 0.72);
+  --ob-float: 0 24px 60px -24px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.04);
+  --ob-e-accent: 0 0 0 1px rgb(var(--ob-accent-ring)), 0 8px 32px -6px rgba(192, 254, 111, 0.28);
+}
+
+/* =========================================================================
+   Base
+   ========================================================================= */
+@layer base {
+  * {
+    border-color: rgb(var(--ob-border));
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    font-optical-sizing: auto;
+  }
+  body {
+    background-color: rgb(var(--ob-background));
+    color: rgb(var(--ob-text-primary));
+    font-family: var(--font-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "ss01", "cv01";
+  }
+  ::selection {
+    background-color: rgb(var(--ob-accent) / 0.32);
+    color: rgb(var(--ob-text-primary));
+  }
+  /* Single, unmistakable focus treatment — blue, never lime. Keyboard-only. */
+  :focus-visible {
+    outline: 3px solid rgb(var(--ob-focus-ring));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: rgb(var(--ob-text-primary));
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* =========================================================================
+   Accessibility modes — driven by <html> data-attributes (BUILD_SPEC §2.7)
+   ========================================================================= */
+
+/* Dyslexia — purely typographic, zero layout breakage. Mono/code stays mono. */
+[data-dyslexia="on"] {
+  --font-text: var(--font-dyslexic);
+  --font-display: var(--font-dyslexic);
+}
+[data-dyslexia="on"] body {
+  letter-spacing: 0.035em;
+  word-spacing: 0.12em;
+  line-height: 1.7;
+}
+[data-dyslexia="on"] p,
+[data-dyslexia="on"] li {
+  max-width: 66ch;
+  text-align: left !important;
+}
+[data-dyslexia="on"] code,
+[data-dyslexia="on"] pre,
+[data-dyslexia="on"] .font-mono {
+  font-family: var(--font-mono) !important;
+  letter-spacing: 0;
+  word-spacing: 0;
 }
 
+/* ADHD focus — spotlight the active learning card, calm everything else. */
+[data-focus="on"] [data-focus-dim] {
+  opacity: 0.32;
+  filter: blur(1.5px);
+  transition: opacity var(--ob-dur-base) var(--ob-ease-standard);
+  pointer-events: none;
+}
+[data-focus="on"] [data-decorative] {
+  display: none !important;
+}
+
+/* Colorblind sub-modes — token nudges layered on top of icon/shape encoding. */
+[data-cvd="deut"] {
+  --ob-success: 32 178 170; /* teal-leaning success */
+  --ob-warning: 230 145 30; /* orange-leaning warning */
+}
+[data-cvd="prot"] {
+  --ob-success: 30 165 175;
+  --ob-warning: 224 150 35;
+}
+[data-cvd="trit"] {
+  --ob-danger: 214 64 110; /* magenta-leaning danger */
+  --ob-info: 70 120 210;
+}
+
+/* =========================================================================
+   Reduced motion — OS pref OR ADHD focus OR explicit toggle.
+   Collapse translate/scale/spring to brief opacity fades.
+   ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 120ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+[data-reduced-motion="on"] *,
+[data-reduced-motion="on"] *::before,
+[data-reduced-motion="on"] *::after,
+[data-focus="on"] *,
+[data-focus="on"] *::before,
+[data-focus="on"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 120ms !important;
+}
+
+/* Drop glass to solid when the user prefers reduced transparency. */
+@media (prefers-reduced-transparency: reduce) {
+  .ob-glass {
+    background-color: rgb(var(--ob-surface-elevated)) !important;
+    backdrop-filter: none !important;
+  }
+}
+
+/* =========================================================================
+   Reusable utilities
+   ========================================================================= */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+  /* Glassmorphic surface (pill nav, spatial panels). */
+  .ob-glass {
+    background-color: var(--ob-glass-fill);
+    backdrop-filter: blur(var(--ob-glass-blur)) saturate(var(--ob-glass-saturate));
+    -webkit-backdrop-filter: blur(var(--ob-glass-blur)) saturate(var(--ob-glass-saturate));
+    border: 1px solid var(--ob-glass-border);
+  }
+  /* Dotted-halftone shimmer for skeletons (calm, not strobing). */
+  .ob-shimmer {
+    background: linear-gradient(
+      100deg,
+      rgb(var(--ob-surface-sunken)) 30%,
+      rgb(var(--ob-border) / 0.6) 50%,
+      rgb(var(--ob-surface-sunken)) 70%
+    );
+    background-size: 200% 100%;
+    animation: ob-shimmer 1400ms ease-in-out infinite;
+  }
+  @keyframes ob-shimmer {
+    to {
+      background-position: -200% 0;
+    }
+  }
+  /* The single sanctioned streaming caret. */
+  .ob-caret::after {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    background: rgb(var(--ob-accent));
+    animation: ob-caret 900ms steps(1) infinite;
+  }
+  @keyframes ob-caret {
+    50% {
+      opacity: 0.3;
+    }
   }
 }

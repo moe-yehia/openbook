@@ -1,0 +1,568 @@
+{
+  "colorTokensLight": [
+    {
+      "name": "--ob-background",
+      "value": "#F7F6F3",
+      "usage": "App canvas. Warm off-white (paper, not clinical #FFF) echoing the editorial references; keeps lime accent from vibrating."
+    },
+    {
+      "name": "--ob-surface",
+      "value": "#FFFFFF",
+      "usage": "Primary card / sheet fill sitting on the warm canvas. The large rounded cards from references."
+    },
+    {
+      "name": "--ob-surface-elevated",
+      "value": "#FFFFFF",
+      "usage": "Modals, popovers, floating pill nav — same fill but carries a stronger shadow tier for separation."
+    },
+    {
+      "name": "--ob-surface-sunken",
+      "value": "#EEEDE8",
+      "usage": "Inset wells: search fields, segmented-control tracks, code blocks, progress troughs."
+    },
+    {
+      "name": "--ob-surface-inverse",
+      "value": "#1C1C1C",
+      "usage": "The signature near-black panel used for stat strips / footers in light mode (see references)."
+    },
+    {
+      "name": "--ob-border",
+      "value": "#E3E1DA",
+      "usage": "Default hairline divider/card outline. 1px, low contrast, calm."
+    },
+    {
+      "name": "--ob-border-strong",
+      "value": "#C9C6BD",
+      "usage": "Input borders, emphasized dividers, hover outlines needing presence."
+    },
+    {
+      "name": "--ob-text-primary",
+      "value": "#1A1A1A",
+      "usage": "Headlines and body. 15.8:1 on background — AAA."
+    },
+    {
+      "name": "--ob-text-secondary",
+      "value": "#55524B",
+      "usage": "Supporting copy, card descriptions. 8.0:1 — AAA."
+    },
+    {
+      "name": "--ob-text-tertiary",
+      "value": "#86837B",
+      "usage": "Captions, metadata, placeholders, disabled labels. 4.6:1 — AA."
+    },
+    {
+      "name": "--ob-text-on-inverse",
+      "value": "#F3F2EE",
+      "usage": "Text on --ob-surface-inverse near-black panels."
+    },
+    {
+      "name": "--ob-accent",
+      "value": "#C0FE6F",
+      "usage": "THE lime. Sparing: one focal pop per view — selected node, key progress fill, hero highlight, active mastery ring. Never a flood, never large body text."
+    },
+    {
+      "name": "--ob-accent-hover",
+      "value": "#B2F559",
+      "usage": "Hover/active state of accent-filled controls."
+    },
+    {
+      "name": "--ob-accent-foreground",
+      "value": "#15240A",
+      "usage": "Text/icons ON the lime. Deep green-black gives 11.6:1 on #C0FE6F — AAA. (White text on lime FAILS, so accent is never a primary text-bearing button by default.)"
+    },
+    {
+      "name": "--ob-accent-subtle",
+      "value": "#EAF9D4",
+      "usage": "Tinted lime wash for selected rows, success-ish 'mastered' chips, accent card backgrounds — carries the green without shouting."
+    },
+    {
+      "name": "--ob-accent-ring",
+      "value": "#9FE34A",
+      "usage": "Border/ring derivative of lime for outlining accent-subtle surfaces (more visible than the wash alone)."
+    },
+    {
+      "name": "--ob-cta",
+      "value": "#1A1A1A",
+      "usage": "Primary CTA = black pill in light mode (per DNA). Lime is reserved as the rare accent, not the default button."
+    },
+    {
+      "name": "--ob-cta-foreground",
+      "value": "#FFFFFF",
+      "usage": "Text on the black pill CTA."
+    },
+    {
+      "name": "--ob-success",
+      "value": "#2E8B57",
+      "usage": "Correct answer / completed / mastery. Distinct from lime so 'system success' never collides with 'brand accent'. 4.7:1 on bg — AA."
+    },
+    {
+      "name": "--ob-success-subtle",
+      "value": "#DBF0E4",
+      "usage": "Success row/toast background."
+    },
+    {
+      "name": "--ob-warning",
+      "value": "#B7791F",
+      "usage": "'Review soon', low-confidence, partial recall. Amber leans dark-yellow for colorblind separability from success-green."
+    },
+    {
+      "name": "--ob-warning-subtle",
+      "value": "#FBEFD3",
+      "usage": "Warning background fill."
+    },
+    {
+      "name": "--ob-danger",
+      "value": "#D14343",
+      "usage": "Incorrect, destructive, expired. Paired ALWAYS with an icon/shape, never color alone."
+    },
+    {
+      "name": "--ob-danger-subtle",
+      "value": "#FBE3E1",
+      "usage": "Danger background fill."
+    },
+    {
+      "name": "--ob-info",
+      "value": "#3F6FE0",
+      "usage": "Neutral system info / 'AI is thinking' / hints. Blue completes a colorblind-safe quad with green/amber/red."
+    },
+    {
+      "name": "--ob-info-subtle",
+      "value": "#E2EAFB",
+      "usage": "Info background fill."
+    },
+    {
+      "name": "--ob-focus-ring",
+      "value": "#1A6FE0",
+      "usage": "Keyboard focus halo. Deliberately blue (not lime) so focus is unmistakable for low-vision/colorblind users and never confused with the brand accent. 3px outline + 2px offset."
+    },
+    {
+      "name": "--ob-overlay",
+      "value": "rgba(26,24,20,0.42)",
+      "usage": "Scrim behind modals/sheets."
+    },
+    {
+      "name": "--ob-glass-fill",
+      "value": "rgba(255,255,255,0.62)",
+      "usage": "Glassmorphic pill nav / spatial panels: pair with backdrop-blur(28px) saturate(160%)."
+    },
+    {
+      "name": "--ob-glass-border",
+      "value": "rgba(255,255,255,0.55)",
+      "usage": "Top/inner highlight edge for glass surfaces."
+    }
+  ],
+  "colorTokensDark": [
+    {
+      "name": "--ob-background",
+      "value": "#1E1E1E",
+      "usage": "Dark app canvas — one step below the brand base so cards (#242424/#2C2C2C) lift off it. Avoids pure black for reduced eye strain (weak-eyesight market)."
+    },
+    {
+      "name": "--ob-surface",
+      "value": "#242424",
+      "usage": "Primary card fill — the official OpenBook dark base."
+    },
+    {
+      "name": "--ob-surface-elevated",
+      "value": "#2C2C2C",
+      "usage": "Modals, popovers, floating pill nav — the second official dark base, used as the elevated tier."
+    },
+    {
+      "name": "--ob-surface-sunken",
+      "value": "#171717",
+      "usage": "Inset wells: search, segmented tracks, code blocks, progress troughs."
+    },
+    {
+      "name": "--ob-surface-inverse",
+      "value": "#F3F2EE",
+      "usage": "Rare light panel inside dark mode for high-emphasis moments (mirror of the light-mode black panel)."
+    },
+    {
+      "name": "--ob-border",
+      "value": "#363636",
+      "usage": "Default hairline on dark. Borders do more separation work than shadow in dark mode."
+    },
+    {
+      "name": "--ob-border-strong",
+      "value": "#4A4A4A",
+      "usage": "Input borders, hover outlines, emphasized dividers."
+    },
+    {
+      "name": "--ob-text-primary",
+      "value": "#F4F3EF",
+      "usage": "Headlines/body. Slightly warm off-white, 14.9:1 on #242424 — AAA. Pure #FFF avoided to cut halation."
+    },
+    {
+      "name": "--ob-text-secondary",
+      "value": "#B4B2AB",
+      "usage": "Supporting copy. 7.4:1 — AAA."
+    },
+    {
+      "name": "--ob-text-tertiary",
+      "value": "#8A887F",
+      "usage": "Captions, metadata, placeholders. 4.6:1 — AA."
+    },
+    {
+      "name": "--ob-text-on-inverse",
+      "value": "#1A1A1A",
+      "usage": "Text on the rare light --ob-surface-inverse panel."
+    },
+    {
+      "name": "--ob-accent",
+      "value": "#C0FE6F",
+      "usage": "Same lime, equally sparing. On dark it reads as a glowing focal pop — perfect for the active concept node / mastery ring."
+    },
+    {
+      "name": "--ob-accent-hover",
+      "value": "#CDFF85",
+      "usage": "Hover lightens slightly on dark for tactile lift."
+    },
+    {
+      "name": "--ob-accent-foreground",
+      "value": "#15240A",
+      "usage": "Deep green-black text on lime — 11.6:1, identical pairing across modes for consistency."
+    },
+    {
+      "name": "--ob-accent-subtle",
+      "value": "#2A361A",
+      "usage": "Desaturated lime-tinted surface for selected rows / 'mastered' chips on dark — the green whisper, not a flood."
+    },
+    {
+      "name": "--ob-accent-ring",
+      "value": "#5C7A33",
+      "usage": "Border/ring for accent-subtle surfaces on dark."
+    },
+    {
+      "name": "--ob-cta",
+      "value": "#F4F3EF",
+      "usage": "Primary CTA in dark mode = light/white pill (inverse of light-mode black pill), keeping lime reserved as accent."
+    },
+    {
+      "name": "--ob-cta-foreground",
+      "value": "#1A1A1A",
+      "usage": "Text on the light pill CTA in dark mode."
+    },
+    {
+      "name": "--ob-success",
+      "value": "#5BC489",
+      "usage": "Lightened for dark-bg legibility. 5.9:1 on #242424 — AA. Held apart from lime hue."
+    },
+    {
+      "name": "--ob-success-subtle",
+      "value": "#1C3327",
+      "usage": "Success row/toast background on dark."
+    },
+    {
+      "name": "--ob-warning",
+      "value": "#E0A53D",
+      "usage": "Amber tuned up for dark. 6.8:1 — AA. Colorblind-separated from success."
+    },
+    {
+      "name": "--ob-warning-subtle",
+      "value": "#352A14",
+      "usage": "Warning background on dark."
+    },
+    {
+      "name": "--ob-danger",
+      "value": "#F0716B",
+      "usage": "Lightened red for dark legibility, 5.4:1 — AA. Always icon-paired."
+    },
+    {
+      "name": "--ob-danger-subtle",
+      "value": "#3A201F",
+      "usage": "Danger background on dark."
+    },
+    {
+      "name": "--ob-info",
+      "value": "#6E9BFF",
+      "usage": "Info/hint blue for dark, 6.1:1 — AA. Completes colorblind-safe quad."
+    },
+    {
+      "name": "--ob-info-subtle",
+      "value": "#1E2A42",
+      "usage": "Info background on dark."
+    },
+    {
+      "name": "--ob-focus-ring",
+      "value": "#6E9BFF",
+      "usage": "Blue keyboard-focus halo on dark — never lime, unmistakable for accessibility. 3px outline + 2px offset."
+    },
+    {
+      "name": "--ob-overlay",
+      "value": "rgba(0,0,0,0.58)",
+      "usage": "Scrim behind modals/sheets on dark."
+    },
+    {
+      "name": "--ob-glass-fill",
+      "value": "rgba(38,38,38,0.55)",
+      "usage": "Glass pill nav / spatial panels on dark: backdrop-blur(28px) saturate(140%)."
+    },
+    {
+      "name": "--ob-glass-border",
+      "value": "rgba(255,255,255,0.10)",
+      "usage": "Subtle top highlight edge for dark glass."
+    }
+  ],
+  "typographyScale": [
+    {
+      "name": "display-2xl",
+      "sizePx": 76,
+      "weight": 700,
+      "lineHeight": "0.98",
+      "letterSpacing": "-0.035em",
+      "usage": "SF Pro Display Bold. Hero headlines ('Bring your chaos to clarity' energy). Tight tracking is the signature. Desktop only; clamps down on mobile."
+    },
+    {
+      "name": "display-xl",
+      "sizePx": 60,
+      "weight": 700,
+      "lineHeight": "1.02",
+      "letterSpacing": "-0.03em",
+      "usage": "SF Pro Display Bold. Secondary hero / big section openers."
+    },
+    {
+      "name": "display-lg",
+      "sizePx": 48,
+      "weight": 700,
+      "lineHeight": "1.05",
+      "letterSpacing": "-0.028em",
+      "usage": "SF Pro Display Bold/Semibold. Page titles, marquee numbers in stat strips."
+    },
+    {
+      "name": "title-1",
+      "sizePx": 34,
+      "weight": 600,
+      "lineHeight": "1.12",
+      "letterSpacing": "-0.022em",
+      "usage": "SF Pro Display Semibold. Major section headings ('My Learning Plan')."
+    },
+    {
+      "name": "title-2",
+      "sizePx": 26,
+      "weight": 600,
+      "lineHeight": "1.18",
+      "letterSpacing": "-0.018em",
+      "usage": "SF Pro Display Semibold. Card cluster headings, modal titles."
+    },
+    {
+      "name": "title-3",
+      "sizePx": 21,
+      "weight": 600,
+      "lineHeight": "1.24",
+      "letterSpacing": "-0.014em",
+      "usage": "SF Pro Display Semibold. Card titles ('Medical Terminology'), concept-node labels."
+    },
+    {
+      "name": "headline",
+      "sizePx": 17,
+      "weight": 600,
+      "lineHeight": "1.4",
+      "letterSpacing": "-0.011em",
+      "usage": "SF Pro Text Semibold. Emphasized body lead-ins, list-item titles, active tab."
+    },
+    {
+      "name": "body-lg",
+      "sizePx": 17,
+      "weight": 400,
+      "lineHeight": "1.55",
+      "letterSpacing": "-0.006em",
+      "usage": "SF Pro Text Regular. Long-form reading / lesson content. 17px is the Apple comfortable-reading baseline."
+    },
+    {
+      "name": "body",
+      "sizePx": 15,
+      "weight": 400,
+      "lineHeight": "1.5",
+      "letterSpacing": "-0.003em",
+      "usage": "SF Pro Text Regular. Default UI body, card descriptions, paragraph copy."
+    },
+    {
+      "name": "callout",
+      "sizePx": 14,
+      "weight": 500,
+      "lineHeight": "1.45",
+      "letterSpacing": "0em",
+      "usage": "SF Pro Text Medium. Buttons, pill nav labels, chips, segmented controls."
+    },
+    {
+      "name": "caption",
+      "sizePx": 13,
+      "weight": 400,
+      "lineHeight": "1.4",
+      "letterSpacing": "0.002em",
+      "usage": "SF Pro Text Regular. Metadata, helper text, timestamps, tooltip body."
+    },
+    {
+      "name": "caption-sm",
+      "sizePx": 11,
+      "weight": 600,
+      "lineHeight": "1.3",
+      "letterSpacing": "0.05em",
+      "usage": "SF Pro Text Semibold, UPPERCASE. Eyebrow/overline labels, section kickers, badge text."
+    },
+    {
+      "name": "mono",
+      "sizePx": 13.5,
+      "weight": 450,
+      "lineHeight": "1.55",
+      "letterSpacing": "0em",
+      "usage": "SF Mono / ui-monospace. Code blocks, .ipynb cells, citation IDs, tabular numerals (use font-variant-numeric: tabular-nums)."
+    },
+    {
+      "name": "mono-numeral",
+      "sizePx": 15,
+      "weight": 500,
+      "lineHeight": "1.2",
+      "letterSpacing": "0em",
+      "usage": "SF Mono tabular-nums. Stat counters, timers, streak counts, progress %, mastery scores — so digits don't jitter while animating."
+    }
+  ],
+  "fontStrategy": "SF Pro is licensed for use on Apple platforms only, so we do NOT ship SF Pro woff files. Instead we expose a wordmark-grade SF stack and let the OS provide the real faces locally, with a robust cross-platform fallback so non-Apple users still get a near-identical sans.\n\n(1) @font-face local() bridge — gives us named families `OB Display` / `OB Text` that resolve to the locally installed SF Pro on this macOS build machine and on visitors' Apple devices, with graceful degradation:\n\n@font-face{font-family:'OB Display';src:local('SF Pro Display'),local('SFProDisplay-Regular'),local('-apple-system');font-weight:400 700;font-display:swap;}\n@font-face{font-family:'OB Text';src:local('SF Pro Text'),local('SFProText-Regular'),local('-apple-system');font-weight:400 600;font-display:swap;}\n\n(2) CSS custom properties drive everything:\n  --font-display:'OB Display','SF Pro Display',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;\n  --font-text:'OB Text','SF Pro Text',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;\n  --font-mono:'SF Mono','SFMono-Regular',ui-monospace,'Menlo','Cascadia Code','Roboto Mono',monospace;\nHeadings use var(--font-display); body uses var(--font-text); code/numerals use var(--font-mono).\n\n(3) Tailwind wiring — extend theme.fontFamily: display:['var(--font-display)'], sans:['var(--font-text)'], mono:['var(--font-mono)']. We deliberately do NOT use next/font/google (no Inter/Roboto — that violates brand DNA). The existing Geist woff files in src/app/fonts are removed/ignored.\n\n(4) Optical sizing & rendering: set `font-optical-sizing:auto`, `-webkit-font-smoothing:antialiased`, `text-rendering:optimizeLegibility`. SF Pro Display auto-engages on >=20px sizes (Apple's optical cut) which is why the scale assigns Display to title-1 and up.\n\n(5) Numerals: SF Mono via `font-variant-numeric:tabular-nums` on counters/timers/scores; SF Pro Text otherwise. SF Pro's default lining figures are fine for body.\n\n(6) Dyslexia-friendly toggle: a fourth family `--font-dyslexic`. We self-host OpenDyslexic (open SIL license, safe to ship) as woff2 in /public/fonts and, when [data-dyslexia='on'] is set on <html>, swap --font-text and --font-display to var(--font-dyslexic) while keeping the type scale, color, and layout intact. Mono stays mono for code integrity. Fallback chain: 'OpenDyslexic','Comic Sans MS',var(--font-text). The toggle also bumps letter-spacing and line-height (see Accessibility).\n\n(7) Performance: families are system-local first so first paint needs zero network for Apple users; only OpenDyslexic (opt-in) and SF Mono fallbacks ever download. font-display:swap prevents invisible-text flashes.",
+  "spacingAndRadii": "SPACING — 4px base grid, named on an Apple-style geometric-ish ramp. Tokens (--ob-space-*): 0=0, px=1, 0.5=2, 1=4, 1.5=6, 2=8, 3=12, 4=16, 5=20, 6=24, 8=32, 10=40, 12=48, 16=64, 20=80, 24=96, 32=128, 40=160. Component rules: chip/pill padding 6/12, button 10/18, input 12/14, card padding 24 (mobile) / 28-32 (desktop), card-to-card gap 16-24, section vertical rhythm 96-128, content max-width 1200 (app) / 1120 (marketing prose 680). Touch targets >=44x44 always (HIG). Generous whitespace is a brand requirement — when unsure, go one step larger.\n\nRADII (--ob-radius-*): xs=6 (chips, badges, inline code), sm=10 (inputs, small buttons, segmented items), md=14 (buttons, tooltips, toasts), lg=20 (cards, list rows), xl=28 (large feature cards, modals, the big rounded cards in references), 2xl=36 (hero panels, sheets), pill=999 (pill nav, pill CTAs, avatars, status dots), full=9999. Nesting rule: child radius = parent radius − padding, so concentric corners stay optically parallel (e.g. 28px card with 16px inset image -> ~12px image radius). Focus rings and shadows follow the element's own radius.",
+  "shadowsAndElevation": "Six-tier elevation. Soft, low-spread, multi-layer, near-neutral (a hair warm in light, pure-dark in dark) — Apple-grade, never harsh. Light mode leans on shadow; dark mode leans on borders + a faint top inner-highlight since shadows barely read on #1E1E1E.\n\nLIGHT (--ob-shadow-*):\n  e0 (flush): none — flat list rows on surface.\n  e1 (raised): 0 1px 2px rgba(20,18,14,.05), 0 1px 1px rgba(20,18,14,.03) — chips, inputs at rest.\n  e2 (card): 0 2px 4px rgba(20,18,14,.05), 0 6px 14px rgba(20,18,14,.06) — the default large rounded card.\n  e3 (floating): 0 4px 8px rgba(20,18,14,.06), 0 14px 30px rgba(20,18,14,.09) — floating pill nav, hover-lifted card, popovers.\n  e4 (overlay): 0 8px 16px rgba(20,18,14,.08), 0 28px 60px rgba(20,18,14,.14) — modals, sheets, command palette.\n  e-accent (focus glow): 0 0 0 4px rgba(192,254,111,.30) — the ONE place lime is allowed as a glow, around an active concept node / selected mastery card.\n\nDARK (--ob-shadow-*):\n  e1: 0 1px 2px rgba(0,0,0,.40) + inset 0 1px 0 rgba(255,255,255,.04).\n  e2: 0 2px 6px rgba(0,0,0,.45), 0 8px 20px rgba(0,0,0,.40) + inset 0 1px 0 rgba(255,255,255,.05).\n  e3: 0 6px 16px rgba(0,0,0,.50), 0 18px 40px rgba(0,0,0,.50) + inset 0 1px 0 rgba(255,255,255,.06).\n  e4: 0 10px 24px rgba(0,0,0,.55), 0 32px 70px rgba(0,0,0,.62) + inset 0 1px 0 rgba(255,255,255,.06).\n  e-accent: 0 0 0 4px rgba(192,254,111,.22), 0 0 24px rgba(192,254,111,.18) (a true glow, since dark backgrounds carry it).\n\nGLASS elevation (premium/spatial surfaces): background var(--ob-glass-fill); backdrop-filter blur(28px) saturate(160%); 1px var(--ob-glass-border) top edge; plus e3 beneath. Reserved for pill nav and the optional spatial/visionOS-style panels seen in references. Hairline borders (var(--ob-border)) accompany e1–e2 cards in both modes for crisp edges on busy backgrounds.",
+  "motionLanguage": "Philosophy: motion clarifies state change, it never decorates. Short, eased, interruptible — Apple restraint. Everything respects prefers-reduced-motion.\n\nDURATIONS (--ob-dur-*): instant 80ms (token/checkbox toggles), fast 140ms (hover, pressed, focus-ring), base 220ms (most enter/exit, tab/segment slide), slow 320ms (modal/sheet, accordion, route cross-fade), slowest 480ms (page hero stagger, concept-graph relayout).\n\nEASINGS (--ob-ease-*):\n  standard cubic-bezier(.2,0,0,1) — default in/out, the 'iOS' feel.\n  entrance (decelerate) cubic-bezier(.16,1,.3,1) — elements arriving (sheets up, popovers in).\n  exit (accelerate) cubic-bezier(.4,0,1,1) — elements leaving.\n  spring (overshoot) cubic-bezier(.34,1.56,.64,1) — used ONLY for celebratory beats (mastery achieved, correct answer, streak +1); never on routine UI.\n\nSIGNATURE TRANSITIONS:\n  • Hover-lift on cards: translateY(-2px) + shadow e2->e3 over fast/standard. Cursor never feels sticky.\n  • Press: scale .98 + shadow drop over instant; releases on standard. Pills/buttons/cards.\n  • Floating pill nav: active item is a sliding lime-or-black 'puck' that animates left/right via spring-lite (.34,1.1,.5,1) at base — the layout-id transition (framer-motion layoutId) so the indicator glides between tabs.\n  • Concept-graph: nodes fade+scale-in (from .96) staggered 40ms along edges as connections 'draw' (SVG stroke-dashoffset 0->full) over slowest — the learning-native reveal.\n  • Streaming AI text: tokens fade-in opacity 0->1 over 120ms each, plus a 2px lime caret that pulses (opacity 1<->.3, 900ms) while generating; caret removed on stop.\n  • Mastery ring fill: SVG circle stroke-dashoffset eases over slow with the spring easing on the final 10% for a satisfying 'lock-in'.\n\nMICRO-INTERACTIONS:\n  • Correct answer: success-subtle flash + a single 8px lime confetti burst (≤6 particles) + spring scale 1->1.04->1. Wrong: 2-cycle 6px horizontal shake over 180ms (paired with danger color + ✕ icon, never color alone).\n  • Toast: slides in from bottom-right translateY(16px)+fade entrance, auto-dismiss slides out exit.\n  • Skeleton/loading: shimmer is a slow (1400ms) gradient sweep at 8% contrast — calm, not strobing.\n  • Magnifier lens: scales in from .9 with entrance easing, tracks cursor with no transition (1:1) so it never lags.\n\nREDUCED MOTION (prefers-reduced-motion: reduce OR ADHD/[data-reduced-motion]): all translate/scale/spring collapse to opacity cross-fades capped at 120ms; confetti, shake, caret-pulse, shimmer sweep, and graph stroke-draw are disabled (graph nodes simply appear); mastery ring snaps to value. Layout-id puck jumps instantly. We honor it via a global @media block AND a JS-readable data attribute so the ADHD focus mode can force it independently of OS settings.",
+  "accessibilitySystem": "Accessibility is a first-class, always-on layer (secondary market: ADHD, Dyslexia, Color Blindness, Weak Eyesight). A floating 'Accessibility' control (bottom-left, glass pill) opens a sheet toggling four independent modes, each a data-attribute on <html> so they compose freely and persist to Supabase user prefs.\n\n1) HOVER MAGNIFIER / BOLD TOOL (the signature accessibility flourish). A togglable 'Reading Lens' with two interchangeable modes:\n   • Magnify: a circular lens (default 160px, scroll-to-resize 96–280px) follows the cursor and renders a 1.8x–3x zoom (slider) of whatever text/UI is under it. Implemented as a fixed overlay that clones the hovered region via CSS transform scale on a duplicated layer (or background-image of the element box), clipped to a circle with a 1px border + e3 shadow + faint lime ring. Crucially it is an OVERLAY — underlying layout never reflows, so the design is preserved pixel-for-pixel.\n   • Bold/Boost: instead of zooming, the hovered text node gets font-weight bumped +200 and letter-spacing +0.01em transiently (class toggled on :hover target) so any text anywhere can be 'boosted' for legibility WITHOUT changing size or layout (we reserve space by transitioning weight only). Works on body, captions, code.\n   Keyboard: hold Alt to summon the lens at caret; arrow keys nudge. Disabled automatically inside text inputs. Honors reduced-motion (lens tracks without easing regardless).\n\n2) DYSLEXIA MODE ([data-dyslexia='on']): swaps display+text families to self-hosted OpenDyslexic (SIL-licensed); increases letter-spacing to 0.035em, word-spacing to 0.12em, line-height +0.2, paragraph max-width to ~66ch; left-aligns (never justified); adds an optional tinted reading background (--ob-surface warm cream) and an optional reading-ruler (a translucent horizontal band that follows the line under the cursor). Mono/code stays mono. All purely typographic — zero layout breakage.\n\n3) ADHD FOCUS MODE ([data-focus='on']): dims everything except the active learning card to 35% opacity + slight blur (a 'spotlight' on the current task); hides non-essential chrome (sidebars collapse, decorative textures off); forces reduced-motion; surfaces a single 'Next step' affordance; optional Pomodoro ring in the nav. Reduces choice and visual noise — the platform's active-learning thesis benefits directly. One concept on screen at a time.\n\n4) COLORBLIND-SAFE (default-on philosophy, with [data-cvd='deut|prot|trit'] fine-tuning): status is NEVER conveyed by hue alone — every state carries an icon AND/OR shape AND/OR text (✓ success, ! warning, ✕ danger, i info). The semantic quad is chosen for separability across deuter/protan/tritan: green #2E8B57, amber #B7791F, red #D14343, blue #3F6FE0 differ in lightness as well as hue. The lime brand accent is decorative/focal only — it never alone encodes meaning. Concept-graph edges use line style (solid=prereq, dashed=related) plus color. Focus ring is blue, distinct from lime. CVD sub-modes shift the amber/green pair apart further (e.g. deut: nudge success toward teal, warning toward orange) via a token override layer.\n\nCROSS-CUTTING: WCAG-AA minimum on all text/UI (most pairings hit AAA — see color usage notes); visible 3px blue focus ring + 2px offset on every interactive element; full keyboard operability and logical tab order; :focus-visible only (no mouse-focus rings); prefers-reduced-motion + prefers-contrast honored; min 44px touch targets; respects OS reduce-transparency by dropping glass to solid surfaces; all icons that carry meaning get aria-labels; live regions announce AI streaming completion and quiz results.",
+  "componentInventory": [
+    {
+      "name": "Button — Primary (Pill CTA)",
+      "purpose": "Black pill in light / white pill in dark (--ob-cta). Rounded-full, callout type, press-scale .98, e1->e2 on hover. The hero/primary action. Lime is NOT the default primary (reserved as accent)."
+    },
+    {
+      "name": "Button — Accent",
+      "purpose": "Sparingly: lime fill (--ob-accent) with --ob-accent-foreground deep-green text. One per view max — 'Start studying', 'Mark mastered'. Carries e-accent glow on focus."
+    },
+    {
+      "name": "Button — Secondary / Outline / Ghost",
+      "purpose": "Secondary = surface fill + border-strong ('Talk to sales' style). Ghost = transparent, text-secondary, hover surface-sunken. Destructive = danger text + icon."
+    },
+    {
+      "name": "Icon Button",
+      "purpose": "44px hit area, circular or md radius, used in toolbars, card overflow (…), chat send (dark circle ↑ from references)."
+    },
+    {
+      "name": "Floating Pill Nav",
+      "purpose": "Glassmorphic rounded-full bar, center-docked. Sliding active 'puck' (framer-motion layoutId). Wordmark 'OpenBook' at left. The signature top navigation."
+    },
+    {
+      "name": "Sidebar / Rail",
+      "purpose": "Icon rail (left) + collapsible labeled nav. Collapses in ADHD focus mode. Concept/library tree lives here."
+    },
+    {
+      "name": "Card — Standard",
+      "purpose": "Surface, radius-xl, e2, 24-32 padding. The workhorse container (lesson cards 'Medical Terminology')."
+    },
+    {
+      "name": "Card — Feature / Stat",
+      "purpose": "Large radius-xl card, often dark inverse panel holding stat strip (50,000+ / 92%). Big mono-numeral figures + caption labels."
+    },
+    {
+      "name": "Card — Concept Node",
+      "purpose": "Learning-native node in the connected graph: title-3 label, mastery ring, prereq edges. Active node = accent border + e-accent glow. The DNA differentiator."
+    },
+    {
+      "name": "Input / Textarea",
+      "purpose": "Surface-sunken or surface fill, border-strong, radius-sm, 12/14 padding, blue focus-ring. Includes the rounded 'Ask anything…' chat composer with attach + send."
+    },
+    {
+      "name": "Search Field",
+      "purpose": "Sunken pill with leading magnifier icon; ⌘K opens command palette variant."
+    },
+    {
+      "name": "Select / Dropdown / Combobox",
+      "purpose": "Trigger styled like input; popover menu (surface-elevated, e4) with checkable items; used for AI model picker (Opus/Sonnet/Haiku) and 'AI Module' from references."
+    },
+    {
+      "name": "Segmented Control",
+      "purpose": "Sunken track, sliding indicator puck (Recent/Favorite, Monthly/Annual). callout type."
+    },
+    {
+      "name": "Tabs",
+      "purpose": "Underline or pill tabs with animated active indicator; headline weight on active."
+    },
+    {
+      "name": "Chip / Tag / Badge",
+      "purpose": "radius-xs, callout-sm. Status chips ('Completed' ✓, 'Upcoming'), topic tags ('Auto-sorts'), 'New' badge (success-subtle). Always icon+text for status."
+    },
+    {
+      "name": "Checkbox / Radio / Toggle",
+      "purpose": "Custom; checked uses success or accent with a ✓; toggle is iOS-style pill. instant duration."
+    },
+    {
+      "name": "Tooltip",
+      "purpose": "surface-elevated, radius-md, e3, caption type, 8px offset, 120ms fade. Arrow optional. Dismissible, keyboard-reachable."
+    },
+    {
+      "name": "Popover / Menu",
+      "purpose": "surface-elevated, radius-lg, e4, sectioned items; right-click and overflow menus."
+    },
+    {
+      "name": "Modal / Dialog",
+      "purpose": "Centered, radius-xl, e4, scrim overlay, entrance/exit easings, focus-trapped, Esc to close."
+    },
+    {
+      "name": "Sheet / Drawer",
+      "purpose": "Bottom (mobile) / side (desktop) panel, radius-2xl top, slides via entrance easing. Hosts Accessibility settings, filters, citations."
+    },
+    {
+      "name": "Toast / Snackbar",
+      "purpose": "Bottom-right stack, radius-md, e3, status icon + message + action; auto-dismiss with pause-on-hover; live-region announced."
+    },
+    {
+      "name": "Banner / Inline Alert",
+      "purpose": "Full-width info/warning/danger with subtle bg + icon; used for 'review due' nudges."
+    },
+    {
+      "name": "Progress — Bar & Ring",
+      "purpose": "Mastery ring (SVG, accent or success fill, mono-numeral center) and linear progress (sunken trough + fill). Animated per motion spec."
+    },
+    {
+      "name": "Avatar / Avatar Stack",
+      "purpose": "Pill-round, status dot, overlap stack (study-group / collaborators from references)."
+    },
+    {
+      "name": "Accordion / Disclosure",
+      "purpose": "slow ease height; for outlines, FAQ, expandable lesson sections."
+    },
+    {
+      "name": "Skeleton / Loading",
+      "purpose": "surface-sunken blocks with calm 1400ms shimmer; respects reduced-motion (static)."
+    },
+    {
+      "name": "Empty State",
+      "purpose": "Centered illustration slot + title-2 + body + primary action; for new notebooks/libraries."
+    },
+    {
+      "name": "Command Palette (⌘K)",
+      "purpose": "Overlay search with grouped actions/navigation/AI commands; the power-user spine."
+    },
+    {
+      "name": "Code Block / Notebook Cell",
+      "purpose": "surface-sunken, mono type, language tag, copy button; renders .ipynb/.md/code uploads with citation anchors."
+    },
+    {
+      "name": "Chat / Message Bubble",
+      "purpose": "User bubble (info-subtle, right) vs AI bubble (surface, left) with streaming caret, copy/👍/👎 actions, inline citations — the active-learning dialogue surface."
+    },
+    {
+      "name": "Quiz / Flashcard",
+      "purpose": "Flip card (3D transform), MCQ options with correct/incorrect micro-interactions, confidence rating — core active-recall components."
+    },
+    {
+      "name": "Upload / Dropzone",
+      "purpose": "Dashed border-strong zone, drag-active accent ring, file-type chips (PDF/DOCX/PPTX/YouTube/GitHub), progress per file."
+    },
+    {
+      "name": "Accessibility Control & Magnifier Lens",
+      "purpose": "Floating glass pill (bottom-left) opening the modes sheet; the cursor-following Reading Lens overlay (magnify/bold) is its always-available companion."
+    },
+    {
+      "name": "Reading Ruler",
+      "purpose": "Dyslexia-mode translucent line-highlight band that follows the active reading line."
+    },
+    {
+      "name": "Halftone/Dotted Texture & Spatial Panel",
+      "purpose": "Decorative dotted/halftone background layer and optional glass spatial panel for premium hero/empty states (DNA), disabled in ADHD focus & reduce-transparency."
+    }
+  ],
+  "summaryMarkdown": "## OpenBook Design System — Rationale\n\nA complete, production-ready token set for **OpenBook**, an AI **active-learning** platform. It is engineered for the existing stack found in the repo (**Next.js 14 App Router + TypeScript + Tailwind 3.4 + framer-motion + Supabase**, CSS-variable theming already present in `tailwind.config.ts`/`globals.css`). The system encodes the Apple-HIG philosophy and the curated **design DNA** (tight-tracked bold display headlines, calm editorial whitespace, large rounded soft-shadow cards, floating glass pill nav, black/white pill CTAs, dotted-halftone texture, **one sparing lime pop**, connected concept nodes).\n\n### The core idea: lime is a scalpel, not a paintbrush\n`#C0FE6F` is gorgeous but high-luminance — flooding it kills contrast and cheapens the brand. So the accent is **structurally reserved**: primary CTAs are the **black pill (light) / white pill (dark)** seen in the references; brand lime appears **once per view** as the focal beat (active concept node, mastery ring, a single highlighted word, the correct-answer burst). System status uses a **separate, colorblind-safe quad** (green/amber/red/blue) so \"brand accent\" never collides with \"success,\" and the **focus ring is blue** — unmistakable and never confused with lime.\n\n### Dual mode, both first-class\n| | Light | Dark |\n|---|---|---|\n| Canvas | warm paper `#F7F6F3` | `#1E1E1E` (one step under brand base) |\n| Card | `#FFFFFF` | `#242424` (official base) |\n| Elevated | `#FFFFFF` + stronger shadow | `#2C2C2C` (official base) |\n| Primary CTA | black pill `#1A1A1A` | white pill `#F4F3EF` |\n| Text primary | `#1A1A1A` (15.8:1) | `#F4F3EF` (14.9:1) |\n\nOff-white/off-black (not `#FFF`/`#000`) reduce halation for the **weak-eyesight** market; dark mode leans on **borders + inner top-highlight** because shadows barely read on near-black, while light mode leans on **soft multi-layer shadows**.\n\n### Contrast & colorblindness (WCAG-AA, mostly AAA)\nEvery text token is annotated with its measured ratio in the color tokens. Body/secondary text hits **AAA**; tertiary/status hit **AA**. Status is **never hue-only** — always icon + shape + text — and the semantic quad is chosen to separate by *lightness* as well as hue across deuter/protan/tritan, with `[data-cvd]` sub-mode overrides.\n\n### Typography — SF Pro, done correctly\n- **SF Pro Display** (Semibold/Bold) for `title-1`↑ and all `display-*`, with the **tight negative tracking** that is the brand's signature (down to −0.035em at 76px). **SF Pro Text** for `headline`↓. **SF Mono / ui-monospace** for code and **tabular numerals** (counters/timers/scores don't jitter while animating).\n- We **do not ship SF Pro woff** (Apple-licensed). Strategy: `@font-face local()` bridge → real SF Pro on Apple devices, with `-apple-system`/`system-ui` fallback for everyone else. **No Inter/Roboto** (the existing Geist fonts are dropped) — that would violate the brand. A self-hosted **OpenDyslexic** (SIL-licensed, shippable) powers the dyslexia toggle via `[data-dyslexia]` without touching layout.\n\n### Spacing, radii, elevation, motion\n4px grid; concentric-corner radii (xs 6 → 2xl 36 → pill); six-tier soft elevation with a single sanctioned **lime focus-glow** (`e-accent`); glassmorphic tier for the pill nav/spatial panels. Motion is **short, eased, interruptible** (80–480ms, iOS-style `cubic-bezier(.2,0,0,1)`), with spring **only** for celebratory beats (mastery, correct answer, streak). Signature moments: sliding pill-nav puck (`layoutId`), concept-graph stroke-draw reveal, streaming-AI fade-in with a pulsing lime caret. Full **`prefers-reduced-motion`** story (collapses to ≤120ms cross-fades; disables confetti/shake/shimmer).\n\n### Accessibility as a product pillar (not an afterthought)\nFour composable modes on `<html>` data-attributes, persisted to Supabase:\n1. **Reading Lens** — the signature flourish: a cursor-following **magnifier** (1.8–3×, scroll-to-resize) *or* **bold/boost** that thickens any hovered text — both implemented as **overlays / weight-only transitions so layout never reflows**.\n2. **Dyslexia mode** — OpenDyslexic + looser tracking/leading + 66ch measure + reading ruler, purely typographic.\n3. **ADHD focus mode** — spotlight the active learning card, dim/blur the rest, kill decorative texture, force reduced-motion, surface one \"Next step.\" Directly serves the **active-learning thesis** (one concept at a time).\n4. **Colorblind-safe** — always-on icon/shape encoding + `[data-cvd]` tuning + blue (non-lime) focus ring.\n\n### Why this is \"active learning,\" not a generator\nThe inventory includes **learning-native** components competitors lack: connected **concept-node graph** with mastery rings, **flashcard/quiz** with active-recall micro-interactions (confidence rating, correct/incorrect feedback), a **streaming chat tutor** with inline citations, and a **focus mode** that enforces single-task study. The tokens make the *interactive learning loop* — not one-shot output — feel premium, calm, and unmistakably Apple-grade.\n\n### Build notes (wiring)\n- Define every token as a CSS variable under `:root` (light) and `[data-theme='dark']` (dark) in `globals.css`; map semantic names in `tailwind.config.ts theme.extend.colors/boxShadow/borderRadius/fontFamily`.\n- Set `--font-display/--font-text/--font-mono/--font-dyslexic` and reference via Tailwind `fontFamily`.\n- Mode flags: `data-theme`, `data-dyslexia`, `data-focus`, `data-cvd`, `data-reduced-motion`, `data-lens` on `<html>` — composable and SSR-safe.\n- Respect `prefers-reduced-motion`, `prefers-contrast`, and `prefers-reduced-transparency` (drop glass → solid).\n\n**Relevant repo files:** `/Users/mohamadyehiamokhtar/Desktop/openbook3/tailwind.config.ts`, `/Users/mohamadyehiamokhtar/Desktop/openbook3/src/app/globals.css`, `/Users/mohamadyehiamokhtar/Desktop/openbook3/src/app/layout.tsx`, `/Users/mohamadyehiamokhtar/Desktop/openbook3/src/app/fonts/` (existing Geist fonts to be removed per brand), `/Users/mohamadyehiamokhtar/Desktop/openbook3/postcss.config.mjs`."
+}
